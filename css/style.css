@@ -102,12 +102,65 @@ li {
 .hero {
   height: 90vh;
 }
-@media screen and (max-width: 960px) {
-  .hero {
-    height: auto;
+
+.bg-home {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.svg-bg-home {
+  width: 150%;
+}
+@media screen and (min-width: 1440px) {
+  .svg-bg-home {
+    width: 100%;
   }
 }
 
+/**
+.bg-home-blur1 {
+  transform: translate3d(0, -100px, 0);
+}
+
+.bg-home-blur2 {
+  transform: translate3d(0, -150px, 0);
+}
+
+.bg-home-rect1 {
+  animation: bg-home-rect 3s ease 0s infinite alternate;
+}
+
+.bg-home-rect2 {
+  animation: bg-home-rect 3s ease 0.5s infinite alternate;
+}
+
+.bg-home-rect3 {
+  animation: bg-home-rect 3s ease 1s infinite alternate;
+}
+
+.bg-home-rect4 {
+  animation: bg-home-rect 3s ease 1.5s infinite alternate;
+}
+*/
+@-webkit-keyframes bg-home-rect {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 30px, 0);
+  }
+}
+@keyframes bg-home-rect {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 30px, 0);
+  }
+}
 h1 {
   color: #161617;
   font-family: "Sora", sans-serif;
@@ -830,4 +883,114 @@ header {
 }
 .nav-link-mobile:hover::after {
   width: 100%;
+}
+
+.div-card {
+  perspective: 500px;
+  position: relative;
+}
+
+.card {
+  width: 340px;
+  height: 217.6px;
+  border-radius: 12px;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  -webkit-animation: flip-card 12s linear infinite alternate, change-bg-card 12s linear infinite alternate;
+          animation: flip-card 12s linear infinite alternate, change-bg-card 12s linear infinite alternate;
+  z-index: -1;
+}
+
+@-webkit-keyframes flip-card {
+  0% {
+    transform: rotateX(-10deg) rotateY(10deg) rotateY(-15deg);
+  }
+  40% {
+    transform: rotateX(0deg) rotateY(20deg);
+  }
+  60% {
+    transform: rotateX(180deg) rotateY(20deg);
+  }
+  100% {
+    transform: rotateX(190deg) rotateY(10deg) rotateY(15deg);
+  }
+}
+
+@keyframes flip-card {
+  0% {
+    transform: rotateX(-10deg) rotateY(10deg) rotateY(-15deg);
+  }
+  40% {
+    transform: rotateX(0deg) rotateY(20deg);
+  }
+  60% {
+    transform: rotateX(180deg) rotateY(20deg);
+  }
+  100% {
+    transform: rotateX(190deg) rotateY(10deg) rotateY(15deg);
+  }
+}
+@-webkit-keyframes change-bg-card {
+  0%, 49% {
+    background-image: url("../svg/nubank.svg");
+    background-size: cover;
+  }
+  50%, 100% {
+    background-image: url("../svg/nubank-verse.svg");
+    background-size: cover;
+  }
+}
+@keyframes change-bg-card {
+  0%, 49% {
+    background-image: url("../svg/nubank.svg");
+    background-size: cover;
+  }
+  50%, 100% {
+    background-image: url("../svg/nubank-verse.svg");
+    background-size: cover;
+  }
+}
+.icon-card-hero {
+  position: absolute;
+  z-index: 200;
+  top: 0px;
+  left: -30px;
+  -webkit-animation: icons-hero 7s ease 0.5s infinite alternate;
+          animation: icons-hero 7s ease 0.5s infinite alternate;
+}
+
+.icon-contactless-hero {
+  position: absolute;
+  z-index: 200;
+  top: 350px;
+  left: 30px;
+  -webkit-animation: icons-hero 7s ease 1s infinite alternate;
+          animation: icons-hero 7s ease 1s infinite alternate;
+}
+
+.icon-mobile-hero {
+  position: absolute;
+  z-index: 200;
+  top: 150px;
+  left: -250px;
+  -webkit-animation: icons-hero 7s ease 2.5s infinite alternate;
+          animation: icons-hero 7s ease 2.5s infinite alternate;
+}
+
+@-webkit-keyframes icons-hero {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(10px, -40px, 0);
+  }
+}
+
+@keyframes icons-hero {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(10px, -40px, 0);
+  }
 }/*# sourceMappingURL=style.css.map */
