@@ -120,7 +120,6 @@ li {
   }
 }
 
-/**
 .bg-home-blur1 {
   transform: translate3d(0, -100px, 0);
 }
@@ -128,6 +127,8 @@ li {
 .bg-home-blur2 {
   transform: translate3d(0, -150px, 0);
 }
+
+/**
 
 .bg-home-rect1 {
   animation: bg-home-rect 3s ease 0s infinite alternate;
@@ -161,6 +162,22 @@ li {
     transform: translate3d(0, 30px, 0);
   }
 }
+.list-item {
+  list-style: none;
+  position: relative;
+  padding: 8px 8px 8px 72px;
+  margin-bottom: 48px;
+}
+.list-item:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+
 h1 {
   color: #161617;
   font-family: "Sora", sans-serif;
@@ -624,6 +641,7 @@ img {
 
 header {
   width: 100%;
+  height: 72px;
   background-color: transparent;
   box-shadow: none;
   position: fixed;
@@ -885,6 +903,21 @@ header {
   width: 100%;
 }
 
+.dropshadow {
+  filter: drop-shadow(0px 16px 24px rgba(169, 80, 196, 0.25));
+}
+
+.bg-icon-mobile::after {
+  background-image: url("../svg/icon-mobile.svg");
+  background-size: cover;
+  transition: 0.5s ease;
+  cursor: pointer;
+  filter: drop-shadow(0px 16px 24px rgba(169, 80, 196, 0.25));
+}
+.bg-icon-mobile:hover::after {
+  transform: scale(1.05);
+}
+
 .div-card {
   perspective: 500px;
   position: relative;
@@ -930,26 +963,20 @@ header {
     transform: rotateX(190deg) rotateY(10deg) rotateY(15deg);
   }
 }
-@-webkit-keyframes change-bg-card {
-  0%, 49% {
-    background-image: url("../svg/nubank.svg");
-    background-size: cover;
-  }
-  50%, 100% {
-    background-image: url("../svg/nubank-verse.svg");
-    background-size: cover;
-  }
-}
+/*
 @keyframes change-bg-card {
-  0%, 49% {
+  0%,
+  49% {
     background-image: url("../svg/nubank.svg");
     background-size: cover;
   }
-  50%, 100% {
+  50%,
+  100% {
     background-image: url("../svg/nubank-verse.svg");
     background-size: cover;
   }
 }
+*/
 .icon-card-hero {
   position: absolute;
   z-index: 200;
@@ -977,15 +1004,7 @@ header {
           animation: icons-hero 7s ease 2.5s infinite alternate;
 }
 
-@-webkit-keyframes icons-hero {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(10px, -40px, 0);
-  }
-}
-
+/*
 @keyframes icons-hero {
   0% {
     transform: translate3d(0, 0, 0);
@@ -993,4 +1012,5 @@ header {
   100% {
     transform: translate3d(10px, -40px, 0);
   }
-}/*# sourceMappingURL=style.css.map */
+}
+*//*# sourceMappingURL=style.css.map */
